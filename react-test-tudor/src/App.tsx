@@ -1,7 +1,11 @@
+import Calendar from './Calendar'
 
 export default function App(){
 
     return (
-        <></>
+        <div>
+            <h1>Calendario Lavorazioni</h1>
+            <Calendar />
+        </div>
     )
 }
