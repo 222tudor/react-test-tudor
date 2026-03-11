@@ -1,12 +1,23 @@
-export default function Calendar() {
-  const days = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-    22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
-  ];
+type CalendarProps = {
+  month: number;
+  year: number;
+};
+
+export default function Calendar({ month, year }: CalendarProps) {
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const firstDay = new Date(year, month, 1).getDay();
+
+  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+  const emptySlots = Array.from({ length: firstDay }, (_, i) => i);
+
+  const monthName = new Date(year, month, 1).toLocaleString("it-IT", {
+    month: "long",
+    year: "numeric",
+  });
 
   return (
     <div>
-      <h2>Marzo 2025</h2>
+      <h2>{monthName.toUpperCase()}</h2>
       <div
         style={{
           display: "grid",
@@ -21,6 +32,9 @@ export default function Calendar() {
         <div>Ven</div>
         <div>Sab</div>
         <div>Dom</div>
+        {emptySlots.map((i) => (
+          <div key={"empty-" + i} />
+        ))}
         {days.map((d) => (
           <div
             key={d}
