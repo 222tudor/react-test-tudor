@@ -30,7 +30,10 @@ export default function Calendar({ month, year, works }: CalendarProps) {
                     <div key={'empty-' + i} />
                 ))}
                 {days.map(d => {
-                    const dayWorks = works.filter(w => new Date(w.creationDate).getDate() === d)
+                    const dayWorks = works.filter(w => {
+                        const d2 = new Date(w.creationDate)
+                        return d2.getDate() === d && d2.getMonth() === month && d2.getFullYear() === year
+                    })
                     return (
                         <div key={d} style={{ border: '1px solid #ccc', minHeight: '80px', padding: '4px' }}>
                             <strong>{d}</strong>
