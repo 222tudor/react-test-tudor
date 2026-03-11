@@ -3,12 +3,13 @@ type CalendarProps = {
     month: number
     year: number
     works: any[]
+    operators: any[]
 }
 
-export default function Calendar({ month, year, works }: CalendarProps) {
+export default function Calendar({ month, year, works, operators }: CalendarProps) {
 
     const daysInMonth = new Date(year, month + 1, 0).getDate()
-    const firstDay = new Date(year, month, 1).getDay()
+    const firstDay = (new Date(year, month, 1).getDay() + 6) % 7
 
     const days = Array.from({ length: daysInMonth }, (_, i) => i + 1)
     const emptySlots = Array.from({ length: firstDay }, (_, i) => i)
@@ -37,11 +38,14 @@ export default function Calendar({ month, year, works }: CalendarProps) {
                     return (
                         <div key={d} style={{ border: '1px solid #ccc', minHeight: '80px', padding: '4px' }}>
                             <strong>{d}</strong>
-                            {dayWorks.map(w => (
-                                <div key={w.id} style={{ fontSize: '12px', background: '#eef', marginTop: '4px', padding: '2px' }}>
-                                    <span>Op. {w.operatorId}</span>
-                                </div>
-                            ))}
+                            {dayWorks.map(w => {
+                                const operator = operators.find((o: any) => o.id == w.operatorId)
+                                return (
+                                    <div key={w.id} style={{ fontSize: '12px', background: '#eef', marginTop: '4px', padding: '2px' }}>
+                                        <span>{operator ? operator.surname : 'N/D'}</span>
+                                    </div>
+                                )
+                            })}
                         </div>
                     )
                 })}
