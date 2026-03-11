@@ -5,6 +5,8 @@ export default function App(){
 
     const [works, setWorks] = useState([])
     const [operators, setOperators] = useState([])
+    const [tickets, setTickets] = useState([])
+    const [customers, setCustomers] = useState([])
     const [month, setMonth] = useState(new Date().getMonth())
     const [year, setYear] = useState(new Date().getFullYear())
 
@@ -23,12 +25,34 @@ export default function App(){
             .then(data => setOperators(data))
     }, [])
 
+    useEffect(() => {
+        fetch('http://localhost:12345/tickets')
+            .then(res => res.json())
+            .then(data => setTickets(data))
+    }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:12345/customers')
+            .then(res => res.json())
+            .then(data => setCustomers(data))
+    }, [])
+
     function prevMonth() {
-        setMonth(month - 1)
+        if (month === 0) {
+            setMonth(11)
+            setYear(year - 1)
+        } else {
+            setMonth(month - 1)
+        }
     }
 
     function nextMonth() {
-        setMonth(month + 1)
+        if (month === 11) {
+            setMonth(0)
+            setYear(year + 1)
+        } else {
+            setMonth(month + 1)
+        }
     }
 
     return (
