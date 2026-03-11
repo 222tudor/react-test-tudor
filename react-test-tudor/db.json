@@ -1,0 +1,240 @@
+{
+  "works": [
+    {
+      "id": "1",
+      "operatorId": 1,
+      "ticketId": 1,
+      "creationDate": 1773219600000,
+      "endDate": 1773234000000,
+      "description": "Durante la manutenzione ordinaria, ho eseguito un controllo completo dell'hardware del server, incluse verifiche sui dischi e sulla memoria. Ho monitorato il funzionamento dei servizi principali per assicurarmi che tutto fosse operativo."
+    },
+    {
+      "id": "2",
+      "operatorId": 2,
+      "ticketId": 1,
+      "creationDate": 1773230400000,
+      "endDate": 1773252000000,
+      "description": "Ho effettuato la manutenzione ordinaria del server, includendo l'applicazione di aggiornamenti di sistema, la pulizia dei file temporanei e l'ottimizzazione dell'utilizzo del disco. Ho verificato la stabilità del server e il corretto funzionamento di tutti i servizi."
+    },
+    {
+      "id": "3",
+      "operatorId": 4,
+      "ticketId": 2,
+      "creationDate": 1774533600000,
+      "endDate": 1774540800000,
+      "description": "Ho analizzato i requisiti del cliente per la nuova infrastruttura IT, identificando le esigenze principali di scalabilità e sicurezza. Ho progettato un'architettura basata su server ridondanti, rete ottimizzata e policy di backup avanzate."
+    },
+    {
+      "id": "4",
+      "operatorId": 3,
+      "ticketId": 1,
+      "creationDate": 1775206800000,
+      "endDate": 1775210400000,
+      "description": "Ho completato la manutenzione ordinaria includendo la configurazione di backup incrementali, il controllo dei log di sicurezza e l'aggiornamento delle policy di accesso. Ho concluso con un test di ripristino per garantire l'affidabilità dei dati."
+    },
+    {
+      "id": "5",
+      "operatorId": 4,
+      "ticketId": 2,
+      "creationDate": 1775734200000,
+      "endDate": 1775737800000,
+      "description": "Ho definito il layout della rete, inclusa la distribuzione di router, switch e access point, per garantire una connettività stabile. Ho pianificato le configurazioni dei server per supportare il carico previsto e implementare una gestione centralizzata."
+    },
+    {
+      "id": "6",
+      "operatorId": 1,
+      "ticketId": 5,
+      "creationDate": 1776160800000,
+      "endDate": 1776175200000,
+      "description": "Ho eseguito la verifica delle configurazioni dei backup automatici sul server e analizzato i log per individuare eventuali errori. Ho risolto un problema di autenticazione che impediva il completamento delle operazioni."
+    },
+    {
+      "id": "7",
+      "operatorId": 2,
+      "ticketId": 3,
+      "creationDate": 1776776400000,
+      "endDate": 1776780000000,
+      "description": "Ho eseguito una scansione delle vulnerabilità sul sistema, identificando configurazioni obsolete o non sicure. Ho implementato correzioni per migliorare la sicurezza complessiva del sistema."
+    },
+    {
+      "id": "8",
+      "operatorId": 2,
+      "ticketId": 5,
+      "creationDate": 1777370400000,
+      "endDate": 1777377600000,
+      "description": "Ho eseguito un test di ripristino per verificare l'integrità dei dati salvati nei backup automatici. Tutti i file critici sono stati recuperati con successo. Ho aggiornato il report di monitoraggio."
+    },
+    {
+      "id": "9",
+      "operatorId": 3,
+      "ticketId": 4,
+      "creationDate": 1777993200000,
+      "endDate": 1777996800000,
+      "description": "Ho controllato le configurazioni del client VPN e individuato un errore nei parametri di autenticazione. Ho aggiornato le credenziali e testato la connessione, che è tornata operativa."
+    },
+    {
+      "id": "10",
+      "operatorId": 4,
+      "ticketId": 3,
+      "creationDate": 1778086800000,
+      "endDate": 1778090400000,
+      "description": "Ho installato tutte le patch di sicurezza critiche rilasciate per il sistema operativo e le applicazioni principali. Successivamente, ho verificato che tutti i servizi siano operativi."
+    },
+    {
+      "id": "11",
+      "operatorId": 3,
+      "ticketId": 3,
+      "creationDate": 1778493600000,
+      "endDate": 1778508000000,
+      "description": "Ho analizzato i log di sicurezza per individuare tentativi di accesso non autorizzati. Ho implementato notifiche automatiche in caso di eventi sospetti e testato il sistema di alert."
+    },
+    {
+      "id": "12",
+      "operatorId": 4,
+      "ticketId": 4,
+      "creationDate": 1779105600000,
+      "endDate": 1779109200000,
+      "description": "Ho analizzato il traffico VPN per individuare colli di bottiglia che rallentavano le connessioni. Ho ottimizzato il protocollo utilizzato e ridotto la latenza migliorando l'esperienza degli utenti."
+    },
+    {
+      "id": "13",
+      "operatorId": 1,
+      "ticketId": 4,
+      "creationDate": 1779724800000,
+      "endDate": 1779735600000,
+      "description": "Ho verificato la validità dei certificati di sicurezza utilizzati dalla VPN. Dopo aver aggiornato un certificato scaduto, ho testato la connessione per garantire la compatibilità con i client."
+    },
+    {
+      "id": "14",
+      "operatorId": 2,
+      "ticketId": 3,
+      "creationDate": 1780336800000,
+      "endDate": 1780340400000,
+      "description": "Ho aggiornato le policy di accesso al sistema per includere autenticazione a due fattori e regole più restrittive per gli utenti amministrativi. Ho comunicato le nuove procedure agli utenti interessati."
+    },
+    {
+      "id": "15",
+      "operatorId": 4,
+      "ticketId": 1,
+      "creationDate": 1780315200000,
+      "endDate": 1780322400000,
+      "description": "Ho completato la manutenzione ordinaria includendo la configurazione di backup incrementali, il controllo dei log di sicurezza e l'aggiornamento delle policy di accesso. Ho concluso con un test di ripristino per garantire l'affidabilità dei dati."
+    },
+    {
+      "id": "123",
+      "operatorId": 123,
+      "ticketId": 123,
+      "creationDate": 1773235986897,
+      "endDate": 1773235986897,
+      "description": "ngekgnkgp"
+    },
+    {
+      "id": "123",
+      "operatorId": 123,
+      "ticketId": 123,
+      "creationDate": 1773235987280,
+      "endDate": 1773235987280,
+      "description": "ngekgnkgp"
+    },
+    {
+      "id": 123,
+      "operatorId": 123,
+      "ticketId": 123,
+      "creationDate": 1773235987531,
+      "endDate": 1773235987531,
+      "description": "ngekgnkgp"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "1",
+      "customerId": 1,
+      "description": "Manutenzione ordinaria server",
+      "priorityId": 3
+    },
+    {
+      "id": "2",
+      "customerId": 1,
+      "description": "Progettazione nuova infrastruttura IT",
+      "priorityId": 2
+    },
+    {
+      "id": "3",
+      "customerId": 2,
+      "description": "Aggiornamento sicurezza sistema",
+      "priorityId": 1
+    },
+    {
+      "id": "4",
+      "customerId": 2,
+      "description": "Analisi problema connessione VPN",
+      "priorityId": 2
+    },
+    {
+      "id": "5",
+      "customerId": 1,
+      "description": "Verifica backup automatici",
+      "priorityId": 1
+    }
+  ],
+  "operators": [
+    {
+      "id": "1",
+      "name": "Anna",
+      "surname": "Verdi",
+      "email": "anna.verdi@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Mario",
+      "surname": "Rossi",
+      "email": "mario.rossi@example.com"
+    },
+    {
+      "id": "3",
+      "name": "Luca",
+      "surname": "Bianchi",
+      "email": "luca.bianchi@example.com"
+    },
+    {
+      "id": "4",
+      "name": "Carla",
+      "surname": "Neri",
+      "email": "carla.neri@example.com"
+    }
+  ],
+  "customers": [
+    {
+      "id": "1",
+      "name": "Azienda Alfa",
+      "address": "Via Roma 1, Milano",
+      "email": "info@aziendaalfa.it",
+      "phone": "02-1234567"
+    },
+    {
+      "id": "2",
+      "name": "Azienda Beta",
+      "address": "Corso Garibaldi 20, Torino",
+      "email": "info@aziendabeta.it",
+      "phone": "011-9876543"
+    }
+  ],
+  "priorities": [
+    {
+      "id": "1",
+      "name": "Alta",
+      "description": "Lavorazioni urgenti, da completare il prima possibile."
+    },
+    {
+      "id": "2",
+      "name": "Media",
+      "description": "Lavorazioni importanti, ma non critiche."
+    },
+    {
+      "id": "3",
+      "name": "Bassa",
+      "description": "Lavorazioni a bassa priorità, possono essere posticipate."
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
