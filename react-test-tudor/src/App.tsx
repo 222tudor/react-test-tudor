@@ -17,7 +17,7 @@ export default function App(){
     return (
         <div>
             <h1>Calendario Lavorazioni</h1>
-            <Calendar month={2} year={2025} />
+            <Calendar month={2} year={2025} works={works} />
         </div>
     )
 }
