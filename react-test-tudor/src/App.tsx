@@ -17,13 +17,17 @@ export default function App(){
     const [showModal, setShowModal] = useState(false)
     const [selectedDay, setSelectedDay] = useState<number | null>(null)
 
-    useEffect(() => {
+    function loadWorks() {
         fetch('http://localhost:12345/works')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setWorks(data)
             })
+    }
+
+    useEffect(() => {
+        loadWorks()
     }, [])
 
     useEffect(() => {
@@ -106,6 +110,7 @@ export default function App(){
                     operators={operators}
                     tickets={tickets}
                     onClose={() => setShowModal(false)}
+                    onSave={loadWorks}
                 />
             )}
         </div>

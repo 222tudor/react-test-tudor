@@ -7,9 +7,10 @@ type AddWorkModalProps = {
     operators: any[]
     tickets: any[]
     onClose: () => void
+    onSave: () => void
 }
 
-export default function AddWorkModal({ day, month, year, operators, tickets, onClose }: AddWorkModalProps) {
+export default function AddWorkModal({ day, month, year, operators, tickets, onClose, onSave }: AddWorkModalProps) {
 
     const pad = (n: number) => String(n).padStart(2, '0')
     const defaultDate = `${year}-${pad(month + 1)}-${pad(day)}T09:00`
@@ -34,6 +35,7 @@ export default function AddWorkModal({ day, month, year, operators, tickets, onC
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(nuovaLavorazione)
         }).then(() => {
+            onSave()
             onClose()
         })
     }
