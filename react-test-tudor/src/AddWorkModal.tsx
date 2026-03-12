@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './AddWorkModal.module.scss'
 
 type AddWorkModalProps = {
     day: number
@@ -41,15 +42,15 @@ export default function AddWorkModal({ day, month, year, operators, tickets, onC
     }
 
     return (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)' }}>
-            <div style={{ background: 'white', margin: '100px auto', padding: '24px', width: '400px' }}>
-                <h3>Nuova Lavorazione - {day}/{month + 1}/{year}</h3>
-                <div>
-                    <label>Descrizione: </label>
+        <div className={styles.overlay}>
+            <div className={styles.modal}>
+                <h3 className={styles.title}>Nuova Lavorazione - {day}/{month + 1}/{year}</h3>
+                <div className={styles.field}>
+                    <label>Descrizione</label>
                     <input value={description} onChange={e => setDescription(e.target.value)} />
                 </div>
-                <div>
-                    <label>Operatore: </label>
+                <div className={styles.field}>
+                    <label>Operatore</label>
                     <select value={operatorId} onChange={e => setOperatorId(e.target.value)}>
                         <option value="">Seleziona</option>
                         {operators.map((o: any) => (
@@ -57,8 +58,8 @@ export default function AddWorkModal({ day, month, year, operators, tickets, onC
                         ))}
                     </select>
                 </div>
-                <div>
-                    <label>Ticket: </label>
+                <div className={styles.field}>
+                    <label>Ticket</label>
                     <select value={ticketId} onChange={e => setTicketId(e.target.value)}>
                         <option value="">Seleziona</option>
                         {tickets.map((t: any) => (
@@ -66,16 +67,18 @@ export default function AddWorkModal({ day, month, year, operators, tickets, onC
                         ))}
                     </select>
                 </div>
-                <div>
-                    <label>Inizio: </label>
+                <div className={styles.field}>
+                    <label>Inizio</label>
                     <input type="datetime-local" value={creationDate} onChange={e => setCreationDate(e.target.value)} />
                 </div>
-                <div>
-                    <label>Fine: </label>
+                <div className={styles.field}>
+                    <label>Fine</label>
                     <input type="datetime-local" value={endDate} onChange={e => setEndDate(e.target.value)} />
                 </div>
-                <button onClick={handleSubmit}>Salva</button>
-                <button onClick={onClose}>Annulla</button>
+                <div className={styles.actions}>
+                    <button onClick={handleSubmit}>Salva</button>
+                    <button onClick={onClose}>Annulla</button>
+                </div>
             </div>
         </div>
     )

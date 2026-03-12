@@ -1,3 +1,4 @@
+import styles from './Calendar.module.scss'
 
 type CalendarProps = {
     month: number
@@ -23,16 +24,16 @@ export default function Calendar({ month, year, works, operators, tickets, custo
     const monthName = new Date(year, month, 1).toLocaleString('it-IT', { month: 'long', year: 'numeric' })
 
     return (
-        <div>
-            <h2>{monthName.toUpperCase()}</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '4px' }}>
-                <div>Lun</div>
-                <div>Mar</div>
-                <div>Mer</div>
-                <div>Gio</div>
-                <div>Ven</div>
-                <div>Sab</div>
-                <div>Dom</div>
+        <div className={styles.calendar}>
+            <h2 className={styles.monthTitle}>{monthName.toUpperCase()}</h2>
+            <div className={styles.grid}>
+                <div className={styles.dayHeader}>Lun</div>
+                <div className={styles.dayHeader}>Mar</div>
+                <div className={styles.dayHeader}>Mer</div>
+                <div className={styles.dayHeader}>Gio</div>
+                <div className={styles.dayHeader}>Ven</div>
+                <div className={styles.dayHeader}>Sab</div>
+                <div className={styles.dayHeader}>Dom</div>
                 {emptySlots.map(i => (
                     <div key={'empty-' + i} />
                 ))}
@@ -46,10 +47,10 @@ export default function Calendar({ month, year, works, operators, tickets, custo
                         return matchesDay && matchesOperator && matchesCustomer
                     })
                     return (
-                        <div key={d} style={{ border: '1px solid #ccc', minHeight: '80px', padding: '4px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <strong>{d}</strong>
-                                <button onClick={() => onAddWork(d)} style={{ fontSize: '10px' }}>+</button>
+                        <div key={d} className={styles.dayCell}>
+                            <div className={styles.dayCellHeader}>
+                                <span className={styles.dayNumber}>{d}</span>
+                                <button className={styles.addButton} onClick={() => onAddWork(d)}>+</button>
                             </div>
                             {dayWorks.map(w => {
                                 const operator = operators.find((o: any) => o.id == w.operatorId)
@@ -57,7 +58,7 @@ export default function Calendar({ month, year, works, operators, tickets, custo
                                 const customer = customers.find((c: any) => c.id == ticket?.customerId)
                                 console.log(customers)
                                 return (
-                                    <div key={w.id} onClick={() => onWorkClick(w)} style={{ fontSize: '12px', background: '#eef', marginTop: '4px', padding: '2px', cursor: 'pointer' }}>
+                                    <div key={w.id} className={styles.workItem} onClick={() => onWorkClick(w)}>
                                         <span>{operator ? operator.surname : 'N/D'}</span>
                                         <span> - {customer ? customer.name : 'N/D'}</span>
                                     </div>

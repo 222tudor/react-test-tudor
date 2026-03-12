@@ -1,0 +1,65 @@
+.calendar {
+    margin-top: 16px;
+}
+
+.monthTitle {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.dayHeader {
+    text-align: center;
+    font-weight: bold;
+    padding: 4px;
+    background: #f0f0f0;
+    font-size: 13px;
+}
+
+.dayCell {
+    border: 1px solid #ccc;
+    min-height: 90px;
+    padding: 4px;
+    background: #fff;
+}
+
+.dayCellHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dayNumber {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.addButton {
+    font-size: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+
+    &:hover {
+        color: #000;
+    }
+}
+
+.workItem {
+    font-size: 12px;
+    background: #e8eeff;
+    margin-top: 4px;
+    padding: 3px 4px;
+    cursor: pointer;
+    border-radius: 3px;
+
+    &:hover {
+        background: #d0d8ff;
+    }
+}

@@ -1,0 +1,21 @@
+.panel {
+    border: 1px solid #333;
+    padding: 16px;
+    margin-top: 16px;
+    max-width: 400px;
+}
+
+.closeButton {
+    float: right;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.field {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
