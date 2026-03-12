@@ -16,7 +16,6 @@ export default function WorkDetail({ work, onClose, onSave, operators = [], tick
     const [editDescription, setEditDescription] = useState('')
     const [editOperatorId, setEditOperatorId] = useState('')
     const [editTicketId, setEditTicketId] = useState('')
-    const [editCustomerId, setEditCustomerId] = useState('')
 
     if (!work) return null
 
@@ -29,7 +28,6 @@ export default function WorkDetail({ work, onClose, onSave, operators = [], tick
         setEditDescription(work.description)
         setEditOperatorId(work.operatorId)
         setEditTicketId(work.ticketId)
-        setEditCustomerId(customer ? customer.id : '')
         setEditMode(true)
     }
 
@@ -37,7 +35,9 @@ export default function WorkDetail({ work, onClose, onSave, operators = [], tick
         const aggiornata = {
             description: editDescription,
             operatorId: parseInt(editOperatorId),
-            ticketId: parseInt(editTicketId)
+            ticketId: parseInt(editTicketId),
+            creationDate: work.creationDate,
+            endDate: work.endDate
         }
         console.log('salvo modifiche', aggiornata)
         fetch(`http://localhost:12345/works/${work.id}`, {
@@ -87,12 +87,7 @@ export default function WorkDetail({ work, onClose, onSave, operators = [], tick
                         </select>
                     </div>
                     <div className={styles.field}>
-                        <label><strong>Cliente:</strong></label>
-                        <select value={editCustomerId} onChange={e => setEditCustomerId(e.target.value)}>
-                            {customers.map((c: any) => (
-                                <option key={c.id} value={c.id}>{c.name}</option>
-                            ))}
-                        </select>
+                        <strong>Cliente:</strong> {customers.find((c: any) => c.id == tickets.find((t: any) => t.id == editTicketId)?.customerId)?.name || 'N/D'}
                     </div>
                     <p className={styles.field}><strong>Ore:</strong> {ore}</p>
                     <button onClick={handleSave}>Salva</button>

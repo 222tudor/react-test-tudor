@@ -9,12 +9,12 @@
       "description": "Durante la manutenzione ordinaria, ho eseguito un controllo completo dell'hardware del server, incluse verifiche sui dischi e sulla memoria. Ho monitorato il funzionamento dei servizi principali per assicurarmi che tutto fosse operativo."
     },
     {
-      "id": "2",
-      "operatorId": 2,
-      "ticketId": 1,
+      "description": "Ho effettuato la manutenzione ordinaria del server, includendo l'applicazione di aggiornamenti di sistema, la pulizia dei file temporanei e l'ottimizzazione dell'utilizzo del disco. Ho verificato la stabilità del server e il corretto funzionamento di tutti i servizi.",
+      "operatorId": 1,
+      "ticketId": 4,
       "creationDate": 1773230400000,
       "endDate": 1773252000000,
-      "description": "Ho effettuato la manutenzione ordinaria del server, includendo l'applicazione di aggiornamenti di sistema, la pulizia dei file temporanei e l'ottimizzazione dell'utilizzo del disco. Ho verificato la stabilità del server e il corretto funzionamento di tutti i servizi."
+      "id": "2"
     },
     {
       "description": "Ho analizzato i requisiti del cliente per la nuova infrastruttura IT, identificando le esigenze principali di scalabilità e sicurezza. Ho progettato un'architettura basata su server ridondanti, rete ottimizzata e policy di backup avanzate.",

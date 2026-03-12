@@ -19,12 +19,16 @@ export default function App(){
     const [showModal, setShowModal] = useState(false)
     const [selectedDay, setSelectedDay] = useState<number | null>(null)
 
-    function loadWorks() {
+    function loadWorks(refreshSelectedId?: number) {
         fetch('http://localhost:12345/works')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setWorks(data)
+                if (refreshSelectedId != null) {
+                    const updated = data.find((w: any) => w.id == refreshSelectedId)
+                    setSelectedWork(updated || null)
+                }
             })
     }
 
@@ -105,7 +109,7 @@ export default function App(){
                 setSelectedDay(day)
                 setShowModal(true)
             }} />
-            <WorkDetail work={selectedWork} onClose={() => setSelectedWork(null)} onSave={loadWorks} operators={operators} tickets={tickets} customers={customers} />
+            <WorkDetail work={selectedWork} onClose={() => setSelectedWork(null)} onSave={() => loadWorks(selectedWork?.id)} operators={operators} tickets={tickets} customers={customers} />
             {showModal && selectedDay && (
                 <AddWorkModal
                     day={selectedDay}
