@@ -81,7 +81,7 @@ export default function App(){
                 console.log('lavorazione selezionata', w)
                 setSelectedWork(w)
             }} />
-            <WorkDetail work={selectedWork} onClose={() => setSelectedWork(null)} tickets={tickets} customers={customers} />
+            <WorkDetail work={selectedWork} onClose={() => setSelectedWork(null)} operators={operators} tickets={tickets} customers={customers} />
         </div>
     )
 }
