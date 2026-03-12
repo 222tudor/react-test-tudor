@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react'
 import Calendar from './Calendar'
 import WorkDetail from './WorkDetail'
 import AddWorkModal from './AddWorkModal'
+import type { Work, Operator, Ticket, Customer } from './types'
 
 export default function App(){
 
-    const [works, setWorks] = useState([])
-    const [operators, setOperators] = useState([])
-    const [tickets, setTickets] = useState([])
-    const [customers, setCustomers] = useState([])
+    const [works, setWorks] = useState<Work[]>([])
+    const [operators, setOperators] = useState<Operator[]>([])
+    const [tickets, setTickets] = useState<Ticket[]>([])
+    const [customers, setCustomers] = useState<Customer[]>([])
     const [month, setMonth] = useState(new Date().getMonth())
     const [year, setYear] = useState(new Date().getFullYear())
     const [filterOperatorId, setFilterOperatorId] = useState('')
