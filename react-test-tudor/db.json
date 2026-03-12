@@ -119,30 +119,6 @@
       "creationDate": 1780315200000,
       "endDate": 1780322400000,
       "description": "Ho completato la manutenzione ordinaria includendo la configurazione di backup incrementali, il controllo dei log di sicurezza e l'aggiornamento delle policy di accesso. Ho concluso con un test di ripristino per garantire l'affidabilità dei dati."
-    },
-    {
-      "id": "123",
-      "operatorId": 123,
-      "ticketId": 123,
-      "creationDate": 1773235986897,
-      "endDate": 1773235986897,
-      "description": "ngekgnkgp"
-    },
-    {
-      "id": "123",
-      "operatorId": 123,
-      "ticketId": 123,
-      "creationDate": 1773235987280,
-      "endDate": 1773235987280,
-      "description": "ngekgnkgp"
-    },
-    {
-      "id": 123,
-      "operatorId": 123,
-      "ticketId": 123,
-      "creationDate": 1773235987531,
-      "endDate": 1773235987531,
-      "description": "ngekgnkgp"
     }
   ],
   "tickets": [
