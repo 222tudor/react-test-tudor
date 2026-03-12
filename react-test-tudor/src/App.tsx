@@ -3,6 +3,7 @@ import Calendar from './Calendar'
 import WorkDetail from './WorkDetail'
 import AddWorkModal from './AddWorkModal'
 import type { Work, Operator, Ticket, Customer } from './types'
+import styles from './App.module.scss'
 
 export default function App(){
 
@@ -68,32 +69,34 @@ export default function App(){
     }
 
     return (
-        <div>
-            <h1>Calendario Lavorazioni</h1>
-            <div>
-                <button onClick={prevMonth}>{'<'}</button>
-                <button onClick={nextMonth}>{'>'}</button>
+        <div className={styles.container}>
+            <div className={styles.header}>
+                <h1>Calendario Lavorazioni</h1>
+                <button className={styles.navButton} onClick={prevMonth}>{'<'}</button>
+                <button className={styles.navButton} onClick={nextMonth}>{'>'}</button>
             </div>
-            <div>
-                <label>Operatore: </label>
-                <select value={filterOperatorId} onChange={e => {
-                    console.log("filter", e.target.value)
-                    setFilterOperatorId(e.target.value)
-                }}>
-                    <option value="">Tutti</option>
-                    {operators.map((o: any) => (
-                        <option key={o.id} value={o.id}>{o.name} {o.surname}</option>
-                    ))}
-                </select>
-            </div>
-            <div>
-                <label>Cliente: </label>
-                <select value={filterCustomerId} onChange={e => setFilterCustomerId(e.target.value)}>
-                    <option value="">Tutti</option>
-                    {customers.map((c: any) => (
-                        <option key={c.id} value={c.id}>{c.name}</option>
-                    ))}
-                </select>
+            <div className={styles.filters}>
+                <div>
+                    <label>Operatore: </label>
+                    <select value={filterOperatorId} onChange={e => {
+                        console.log("filter", e.target.value)
+                        setFilterOperatorId(e.target.value)
+                    }}>
+                        <option value="">Tutti</option>
+                        {operators.map((o) => (
+                            <option key={o.id} value={o.id}>{o.name} {o.surname}</option>
+                        ))}
+                    </select>
+                </div>
+                <div>
+                    <label>Cliente: </label>
+                    <select value={filterCustomerId} onChange={e => setFilterCustomerId(e.target.value)}>
+                        <option value="">Tutti</option>
+                        {customers.map((c) => (
+                            <option key={c.id} value={c.id}>{c.name}</option>
+                        ))}
+                    </select>
+                </div>
             </div>
             <Calendar month={month} year={year} works={works} operators={operators} tickets={tickets} customers={customers} filterOperatorId={filterOperatorId} filterCustomerId={filterCustomerId} onWorkClick={(w) => {
                 console.log('lavorazione selezionata', w)
