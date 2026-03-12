@@ -4,9 +4,11 @@ type CalendarProps = {
     year: number
     works: any[]
     operators: any[]
+    tickets: any[]
+    customers: any[]
 }
 
-export default function Calendar({ month, year, works, operators }: CalendarProps) {
+export default function Calendar({ month, year, works, operators, tickets, customers }: CalendarProps) {
 
     const daysInMonth = new Date(year, month + 1, 0).getDate()
     const firstDay = (new Date(year, month, 1).getDay() + 6) % 7
@@ -40,9 +42,12 @@ export default function Calendar({ month, year, works, operators }: CalendarProp
                             <strong>{d}</strong>
                             {dayWorks.map(w => {
                                 const operator = operators.find((o: any) => o.id == w.operatorId)
+                                const customer = customers.find((c: any) => c.id == w.ticketId)
+                                console.log(customers)
                                 return (
                                     <div key={w.id} style={{ fontSize: '12px', background: '#eef', marginTop: '4px', padding: '2px' }}>
                                         <span>{operator ? operator.surname : 'N/D'}</span>
+                                        <span> - {customer ? customer.name : 'N/D'}</span>
                                     </div>
                                 )
                             })}

@@ -62,7 +62,7 @@ export default function App(){
                 <button onClick={prevMonth}>{'<'}</button>
                 <button onClick={nextMonth}>{'>'}</button>
             </div>
-            <Calendar month={month} year={year} works={works} operators={operators} />
+            <Calendar month={month} year={year} works={works} operators={operators} tickets={tickets} customers={customers} />
         </div>
     )
 }
