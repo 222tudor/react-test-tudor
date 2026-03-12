@@ -6,9 +6,10 @@ type CalendarProps = {
     operators: any[]
     tickets: any[]
     customers: any[]
+    filterOperatorId: string
 }
 
-export default function Calendar({ month, year, works, operators, tickets, customers }: CalendarProps) {
+export default function Calendar({ month, year, works, operators, tickets, customers, filterOperatorId }: CalendarProps) {
 
     const daysInMonth = new Date(year, month + 1, 0).getDate()
     const firstDay = (new Date(year, month, 1).getDay() + 6) % 7
@@ -35,7 +36,9 @@ export default function Calendar({ month, year, works, operators, tickets, custo
                 {days.map(d => {
                     const dayWorks = works.filter(w => {
                         const d2 = new Date(w.creationDate)
-                        return d2.getDate() === d && d2.getMonth() === month && d2.getFullYear() === year
+                        const matchesDay = d2.getDate() === d && d2.getMonth() === month && d2.getFullYear() === year
+                        const matchesOperator = filterOperatorId === '' || w.operatorId === filterOperatorId
+                        return matchesDay && matchesOperator
                     })
                     return (
                         <div key={d} style={{ border: '1px solid #ccc', minHeight: '80px', padding: '4px' }}>

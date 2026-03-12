@@ -9,6 +9,7 @@ export default function App(){
     const [customers, setCustomers] = useState([])
     const [month, setMonth] = useState(new Date().getMonth())
     const [year, setYear] = useState(new Date().getFullYear())
+    const [filterOperatorId, setFilterOperatorId] = useState('')
 
     useEffect(() => {
         fetch('http://localhost:12345/works')
@@ -62,7 +63,19 @@ export default function App(){
                 <button onClick={prevMonth}>{'<'}</button>
                 <button onClick={nextMonth}>{'>'}</button>
             </div>
-            <Calendar month={month} year={year} works={works} operators={operators} tickets={tickets} customers={customers} />
+            <div>
+                <label>Operatore: </label>
+                <select value={filterOperatorId} onChange={e => {
+                    console.log("filter", e.target.value)
+                    setFilterOperatorId(e.target.value)
+                }}>
+                    <option value="">Tutti</option>
+                    {operators.map((o: any) => (
+                        <option key={o.id} value={o.id}>{o.name} {o.surname}</option>
+                    ))}
+                </select>
+            </div>
+            <Calendar month={month} year={year} works={works} operators={operators} tickets={tickets} customers={customers} filterOperatorId={filterOperatorId} />
         </div>
     )
 }
