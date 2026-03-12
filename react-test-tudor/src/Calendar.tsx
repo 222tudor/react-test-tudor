@@ -7,10 +7,11 @@ type CalendarProps = {
     tickets: any[]
     customers: any[]
     filterOperatorId: string
+    filterCustomerId: string
     onWorkClick: (work: any) => void
 }
 
-export default function Calendar({ month, year, works, operators, tickets, customers, filterOperatorId, onWorkClick }: CalendarProps) {
+export default function Calendar({ month, year, works, operators, tickets, customers, filterOperatorId, filterCustomerId, onWorkClick }: CalendarProps) {
 
     const daysInMonth = new Date(year, month + 1, 0).getDate()
     const firstDay = (new Date(year, month, 1).getDay() + 6) % 7
@@ -39,7 +40,8 @@ export default function Calendar({ month, year, works, operators, tickets, custo
                         const d2 = new Date(w.creationDate)
                         const matchesDay = d2.getDate() === d && d2.getMonth() === month && d2.getFullYear() === year
                         const matchesOperator = filterOperatorId === '' || w.operatorId == filterOperatorId
-                        return matchesDay && matchesOperator
+                        const matchesCustomer = filterCustomerId === '' || w.customerId == filterCustomerId
+                        return matchesDay && matchesOperator && matchesCustomer
                     })
                     return (
                         <div key={d} style={{ border: '1px solid #ccc', minHeight: '80px', padding: '4px' }}>

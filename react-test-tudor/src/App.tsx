@@ -11,6 +11,7 @@ export default function App(){
     const [month, setMonth] = useState(new Date().getMonth())
     const [year, setYear] = useState(new Date().getFullYear())
     const [filterOperatorId, setFilterOperatorId] = useState('')
+    const [filterCustomerId, setFilterCustomerId] = useState('')
     const [selectedWork, setSelectedWork] = useState<any>(null)
 
     useEffect(() => {
@@ -77,7 +78,16 @@ export default function App(){
                     ))}
                 </select>
             </div>
-            <Calendar month={month} year={year} works={works} operators={operators} tickets={tickets} customers={customers} filterOperatorId={filterOperatorId} onWorkClick={(w) => {
+            <div>
+                <label>Cliente: </label>
+                <select value={filterCustomerId} onChange={e => setFilterCustomerId(e.target.value)}>
+                    <option value="">Tutti</option>
+                    {customers.map((c: any) => (
+                        <option key={c.id} value={c.id}>{c.name}</option>
+                    ))}
+                </select>
+            </div>
+            <Calendar month={month} year={year} works={works} operators={operators} tickets={tickets} customers={customers} filterOperatorId={filterOperatorId} filterCustomerId={filterCustomerId} onWorkClick={(w) => {
                 console.log('lavorazione selezionata', w)
                 setSelectedWork(w)
             }} />
