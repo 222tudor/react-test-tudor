@@ -37,7 +37,7 @@ export default function Calendar({ month, year, works, operators, tickets, custo
                     const dayWorks = works.filter(w => {
                         const d2 = new Date(w.creationDate)
                         const matchesDay = d2.getDate() === d && d2.getMonth() === month && d2.getFullYear() === year
-                        const matchesOperator = filterOperatorId === '' || w.operatorId === filterOperatorId
+                        const matchesOperator = filterOperatorId === '' || w.operatorId == filterOperatorId
                         return matchesDay && matchesOperator
                     })
                     return (
