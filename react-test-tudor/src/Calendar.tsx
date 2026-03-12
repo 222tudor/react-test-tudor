@@ -9,9 +9,10 @@ type CalendarProps = {
     filterOperatorId: string
     filterCustomerId: string
     onWorkClick: (work: any) => void
+    onAddWork: (day: number) => void
 }
 
-export default function Calendar({ month, year, works, operators, tickets, customers, filterOperatorId, filterCustomerId, onWorkClick }: CalendarProps) {
+export default function Calendar({ month, year, works, operators, tickets, customers, filterOperatorId, filterCustomerId, onWorkClick, onAddWork }: CalendarProps) {
 
     const daysInMonth = new Date(year, month + 1, 0).getDate()
     const firstDay = (new Date(year, month, 1).getDay() + 6) % 7
@@ -46,7 +47,10 @@ export default function Calendar({ month, year, works, operators, tickets, custo
                     })
                     return (
                         <div key={d} style={{ border: '1px solid #ccc', minHeight: '80px', padding: '4px' }}>
-                            <strong>{d}</strong>
+                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <strong>{d}</strong>
+                                <button onClick={() => onAddWork(d)} style={{ fontSize: '10px' }}>+</button>
+                            </div>
                             {dayWorks.map(w => {
                                 const operator = operators.find((o: any) => o.id == w.operatorId)
                                 const ticket = tickets.find((t: any) => t.id == w.ticketId)

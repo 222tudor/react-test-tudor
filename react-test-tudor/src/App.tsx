@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Calendar from './Calendar'
 import WorkDetail from './WorkDetail'
+import AddWorkModal from './AddWorkModal'
 
 export default function App(){
 
@@ -13,6 +14,8 @@ export default function App(){
     const [filterOperatorId, setFilterOperatorId] = useState('')
     const [filterCustomerId, setFilterCustomerId] = useState('')
     const [selectedWork, setSelectedWork] = useState<any>(null)
+    const [showModal, setShowModal] = useState(false)
+    const [selectedDay, setSelectedDay] = useState<number | null>(null)
 
     useEffect(() => {
         fetch('http://localhost:12345/works')
@@ -90,8 +93,21 @@ export default function App(){
             <Calendar month={month} year={year} works={works} operators={operators} tickets={tickets} customers={customers} filterOperatorId={filterOperatorId} filterCustomerId={filterCustomerId} onWorkClick={(w) => {
                 console.log('lavorazione selezionata', w)
                 setSelectedWork(w)
+            }} onAddWork={(day) => {
+                setSelectedDay(day)
+                setShowModal(true)
             }} />
             <WorkDetail work={selectedWork} onClose={() => setSelectedWork(null)} operators={operators} tickets={tickets} customers={customers} />
+            {showModal && selectedDay && (
+                <AddWorkModal
+                    day={selectedDay}
+                    month={month}
+                    year={year}
+                    operators={operators}
+                    tickets={tickets}
+                    onClose={() => setShowModal(false)}
+                />
+            )}
         </div>
     )
 }
