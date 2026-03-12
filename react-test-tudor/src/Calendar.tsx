@@ -40,7 +40,8 @@ export default function Calendar({ month, year, works, operators, tickets, custo
                         const d2 = new Date(w.creationDate)
                         const matchesDay = d2.getDate() === d && d2.getMonth() === month && d2.getFullYear() === year
                         const matchesOperator = filterOperatorId === '' || w.operatorId == filterOperatorId
-                        const matchesCustomer = filterCustomerId === '' || w.customerId == filterCustomerId
+                        const workTicket = tickets.find((t: any) => t.id == w.ticketId)
+                        const matchesCustomer = filterCustomerId === '' || workTicket?.customerId == filterCustomerId
                         return matchesDay && matchesOperator && matchesCustomer
                     })
                     return (
