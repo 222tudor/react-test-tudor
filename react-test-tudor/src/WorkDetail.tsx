@@ -4,12 +4,13 @@ import styles from './WorkDetail.module.scss'
 type WorkDetailProps = {
     work: any
     onClose: () => void
+    onSave: () => void
     operators?: any[]
     tickets: any[]
     customers: any[]
 }
 
-export default function WorkDetail({ work, onClose, operators = [], tickets, customers }: WorkDetailProps) {
+export default function WorkDetail({ work, onClose, onSave, operators = [], tickets, customers }: WorkDetailProps) {
 
     const [editMode, setEditMode] = useState(false)
     const [editDescription, setEditDescription] = useState('')
@@ -33,8 +34,20 @@ export default function WorkDetail({ work, onClose, operators = [], tickets, cus
     }
 
     function handleSave() {
-        // TODO: chiamare API PUT
-        console.log('salvo modifiche', { editDescription, editOperatorId, editTicketId, editCustomerId })
+        const aggiornata = {
+            description: editDescription,
+            operatorId: parseInt(editOperatorId),
+            ticketId: parseInt(editTicketId)
+        }
+        console.log('salvo modifiche', aggiornata)
+        fetch(`http://localhost:12345/works/${work.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(aggiornata)
+        }).then(() => {
+            setEditMode(false)
+            onSave()
+        })
     }
 
     return (

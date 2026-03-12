@@ -105,7 +105,7 @@ export default function App(){
                 setSelectedDay(day)
                 setShowModal(true)
             }} />
-            <WorkDetail work={selectedWork} onClose={() => setSelectedWork(null)} operators={operators} tickets={tickets} customers={customers} />
+            <WorkDetail work={selectedWork} onClose={() => setSelectedWork(null)} onSave={loadWorks} operators={operators} tickets={tickets} customers={customers} />
             {showModal && selectedDay && (
                 <AddWorkModal
                     day={selectedDay}

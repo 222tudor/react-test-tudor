@@ -17,12 +17,10 @@
       "description": "Ho effettuato la manutenzione ordinaria del server, includendo l'applicazione di aggiornamenti di sistema, la pulizia dei file temporanei e l'ottimizzazione dell'utilizzo del disco. Ho verificato la stabilità del server e il corretto funzionamento di tutti i servizi."
     },
     {
-      "id": "3",
+      "description": "Ho analizzato i requisiti del cliente per la nuova infrastruttura IT, identificando le esigenze principali di scalabilità e sicurezza. Ho progettato un'architettura basata su server ridondanti, rete ottimizzata e policy di backup avanzate.",
       "operatorId": 4,
       "ticketId": 2,
-      "creationDate": 1774533600000,
-      "endDate": 1774540800000,
-      "description": "Ho analizzato i requisiti del cliente per la nuova infrastruttura IT, identificando le esigenze principali di scalabilità e sicurezza. Ho progettato un'architettura basata su server ridondanti, rete ottimizzata e policy di backup avanzate."
+      "id": "3"
     },
     {
       "id": "4",
@@ -121,12 +119,10 @@
       "description": "Ho completato la manutenzione ordinaria includendo la configurazione di backup incrementali, il controllo dei log di sicurezza e l'aggiornamento delle policy di accesso. Ho concluso con un test di ripristino per garantire l'affidabilità dei dati."
     },
     {
-      "id": "2b8a",
       "description": "Lavorazione",
-      "operatorId": 3,
+      "operatorId": 1,
       "ticketId": 5,
-      "creationDate": 1773302400000,
-      "endDate": 1773302400000
+      "id": "2b8a"
     }
   ],
   "tickets": [
