@@ -23,8 +23,8 @@ export default function AddWorkModal({ day, month, year, operators, tickets, onC
     function handleSubmit() {
         const nuovaLavorazione = {
             description,
-            operatorId,
-            ticketId,
+            operatorId: parseInt(operatorId),
+            ticketId: parseInt(ticketId),
             creationDate: new Date(creationDate).getTime(),
             endDate: new Date(endDate).getTime()
         }
