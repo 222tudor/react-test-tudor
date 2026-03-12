@@ -42,7 +42,8 @@ export default function Calendar({ month, year, works, operators, tickets, custo
                             <strong>{d}</strong>
                             {dayWorks.map(w => {
                                 const operator = operators.find((o: any) => o.id == w.operatorId)
-                                const customer = customers.find((c: any) => c.id == w.ticketId)
+                                const ticket = tickets.find((t: any) => t.id == w.ticketId)
+                                const customer = customers.find((c: any) => c.id == ticket?.customerId)
                                 console.log(customers)
                                 return (
                                     <div key={w.id} style={{ fontSize: '12px', background: '#eef', marginTop: '4px', padding: '2px' }}>
