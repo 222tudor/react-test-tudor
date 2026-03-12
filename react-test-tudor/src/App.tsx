@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Calendar from './Calendar'
+import WorkDetail from './WorkDetail'
 
 export default function App(){
 
@@ -10,6 +11,7 @@ export default function App(){
     const [month, setMonth] = useState(new Date().getMonth())
     const [year, setYear] = useState(new Date().getFullYear())
     const [filterOperatorId, setFilterOperatorId] = useState('')
+    const [selectedWork, setSelectedWork] = useState<any>(null)
 
     useEffect(() => {
         fetch('http://localhost:12345/works')
@@ -75,7 +77,11 @@ export default function App(){
                     ))}
                 </select>
             </div>
-            <Calendar month={month} year={year} works={works} operators={operators} tickets={tickets} customers={customers} filterOperatorId={filterOperatorId} />
+            <Calendar month={month} year={year} works={works} operators={operators} tickets={tickets} customers={customers} filterOperatorId={filterOperatorId} onWorkClick={(w) => {
+                console.log('lavorazione selezionata', w)
+                setSelectedWork(w)
+            }} />
+            <WorkDetail work={selectedWork} onClose={() => setSelectedWork(null)} />
         </div>
     )
 }

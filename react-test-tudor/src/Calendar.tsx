@@ -7,9 +7,10 @@ type CalendarProps = {
     tickets: any[]
     customers: any[]
     filterOperatorId: string
+    onWorkClick: (work: any) => void
 }
 
-export default function Calendar({ month, year, works, operators, tickets, customers, filterOperatorId }: CalendarProps) {
+export default function Calendar({ month, year, works, operators, tickets, customers, filterOperatorId, onWorkClick }: CalendarProps) {
 
     const daysInMonth = new Date(year, month + 1, 0).getDate()
     const firstDay = (new Date(year, month, 1).getDay() + 6) % 7
@@ -49,7 +50,7 @@ export default function Calendar({ month, year, works, operators, tickets, custo
                                 const customer = customers.find((c: any) => c.id == ticket?.customerId)
                                 console.log(customers)
                                 return (
-                                    <div key={w.id} style={{ fontSize: '12px', background: '#eef', marginTop: '4px', padding: '2px' }}>
+                                    <div key={w.id} onClick={() => onWorkClick(w)} style={{ fontSize: '12px', background: '#eef', marginTop: '4px', padding: '2px', cursor: 'pointer' }}>
                                         <span>{operator ? operator.surname : 'N/D'}</span>
                                         <span> - {customer ? customer.name : 'N/D'}</span>
                                     </div>
