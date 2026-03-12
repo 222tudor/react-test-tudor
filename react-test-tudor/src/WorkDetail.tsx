@@ -68,7 +68,7 @@ export default function WorkDetail({ work, onClose, onSave, operators = [], tick
                 <>
                     <div className={styles.field}>
                         <label><strong>Descrizione:</strong></label>
-                        <input value={editDescription} onChange={e => setEditDescription(e.target.value)} />
+                        <textarea value={editDescription} onChange={e => setEditDescription(e.target.value)} rows={4} />
                     </div>
                     <div className={styles.field}>
                         <label><strong>Operatore:</strong></label>
